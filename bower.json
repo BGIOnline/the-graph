@@ -6,7 +6,7 @@
     "flow",
     "noflo"
   ],
-  "description": "HTML custom elements for dataflow graph editing",
+  "description": "BGI",
   "dependencies": {
     "font-awesome": "~4.3.0",
     "hammerjs": "~1.1.2",
