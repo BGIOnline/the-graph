@@ -280,7 +280,7 @@
         nofloGraph.nodes.forEach(function (node) {
           var component = {
             name: node.component,
-            icon: 'cog',
+            icon: node.metadata.icon?node.metadata.icon:'cog',
             description: '',
             inports: [],
             outports: []
