@@ -30,7 +30,7 @@
     for (i = 0, len = keys.length; i < len; i++) {
       var node = graph.getNode(keys[i]);
       var newNode = cloneObject(node);
-      newNode.id = makeNewId(node.component);
+      newNode.id = makeNewId(node.metadata.label);
       clipboardContent.nodes.push(newNode);
       map[node.id] = newNode.id;
     }
@@ -55,9 +55,11 @@
     for (i = 0, len = clipboardContent.nodes.length; i < len; i++) {
       var node = clipboardContent.nodes[i];
       var meta = cloneObject(node.metadata);
+      var newId = makeNewId(node.metadata.label);
       meta.x += 36;
       meta.y += 36;
-      var newNode = graph.addNode(makeNewId(node.component), node.component, meta);
+      meta.label = newId;
+      var newNode = graph.addNode(newId, node.component, meta);
       map[node.id] = newNode.id;
       pasted.nodes.push(newNode);
     }
